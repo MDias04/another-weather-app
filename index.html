@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Another Weather App</title>
+
+    <!-- LINKS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/520d6dfbfc.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <main class="background">
+      <section id="glass-card">
+        <div class="dashboard">
+          <h1 class="date" id="current-date">Mon 22 February</h1>
+          <p id="current-time" class="time">21:48</p>
+          <h2 class="location" id="current-city">Christchurch, UK</h2>
+
+          <form id="search-location">
+            <input
+              type="text"
+              class="searchbar"
+              id="search-city"
+              placeholder=" Enter Location"
+              autocomplete="off"
+            />
+            <button class="search-btn" type="submit">Find</button>
+            <button
+              id="current-btn"
+              class="currentBtn"
+              type="submit"
+              value=""
+            >
+              Current Location
+            </button>
+          </form>
+        </div>
+
+        <div id="degrees">
+          <h1 class="temperature" id="current-temperature">11</h1>
+          <h3 class="conditions" id="conditions">Clouds</h3>
+          <br />
+          <span>
+            <a href="#" id="celcius">C˚</a>
+            <a href="#" id="fahrenheit">F˚</a>
+          </span>
+        </div>
+
+        <div class="container">
+          <div class="row weather-details">
+            <div class="col">
+              <p class="items" id="humidity">
+                Humidity: 68% </i>
+              </p>
+            </div>
+            <div class="col">
+              <p class="items" id="wind">Wind: 7</i></p>
+            </div>
+
+            <div class="col">
+              <p class="item high" id="high">High: 11°</p>
+            </div>
+            <div class="col">
+              <p class="item low" id="low">Low: 0°</p>
+            </div>
+          </div>
+        </div>
+        <div class="container weekdays">
+          <ul class="row">
+            <li class="col">
+              Tuesday <br />
+              <i class="week-icons fas fa-cloud-sun"></i> <br />
+              <span>12°</span>
+            </li>
+            <li class="col">
+              Wednesday <br />
+              <i class="week-icons fas fa-sun"></i> <br />
+              <span>14°</span>
+            </li>
+            <li class="col">
+              Thursday <br />
+              <i class="week-icons fas fa-sun"></i> <br />
+              <span>13°</span>
+            </li>
+            <li class="col">
+              Friday <br />
+              <i class="week-icons fas fa-cloud-sun"></i> <br />
+              <span>10°</span>
+            </li>
+            <li class="col">
+              Saturday <br />
+              <i class="week-icons fas fa-cloud-sun"></i> <br />
+              <span> 10° </span>
+            </li>
+            <li class="col">
+              Sunday <br />
+              <i class="week-icons fas fa-cloud-sun"></i> <br />
+              <span>7°</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <footer class="footer"><a href="https://github.com/MDias04/another-weather-app" target="
+        _blank"> Another Weather App</a> by <em>Marta Dias</em></footer>
+    </main>
+    <script src="src/index.js"></script>
+  </body>
+</html>
