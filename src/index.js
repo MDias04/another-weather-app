@@ -112,6 +112,12 @@ function getWeather(response) {
   let description = document.querySelector("#conditions");
   description.innerHTML = `${conditions}`;
 
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
   let winds = document.querySelector("#wind");
   winds.innerHTML = `Wind: ${wind}`;
 

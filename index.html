@@ -47,12 +47,7 @@
               autocomplete="off"
             />
             <button class="search-btn" type="submit">Find</button>
-            <button
-              id="current-btn"
-              class="currentBtn"
-              type="submit"
-              value=""
-            >
+            <button id="current-btn" class="currentBtn" type="submit" value="">
               Current Location
             </button>
           </form>
@@ -60,7 +55,15 @@
 
         <div id="degrees">
           <h1 class="temperature" id="current-temperature">11</h1>
-          <h3 class="conditions" id="conditions">Clouds</h3>
+          <h3 class="conditions" id="conditions">
+            <img
+              id="icon"
+              src="http://openweathermap.org/img/wn/03d@2x.png"
+              alt=""
+            />
+            Clouds
+          </h3>
+
           <br />
           <span class="metrics">
             <a href="#" id="celcius">C˚</a>
@@ -71,12 +74,10 @@
         <div class="container">
           <div class="row weather-details">
             <div class="col">
-              <p class="items" id="humidity">
-                Humidity: 68% </i>
-              </p>
+              <p class="items" id="humidity">Humidity: 68%</p>
             </div>
             <div class="col">
-              <p class="items" id="wind">Wind: 7</i></p>
+              <p class="items" id="wind">Wind: 7</p>
             </div>
 
             <div class="col">
@@ -122,8 +123,16 @@
           </ul>
         </div>
       </section>
-      <footer class="footer"><a href="https://github.com/MDias04/another-weather-app" target="
-        _blank"> Another Weather App</a> by <em>Marta Dias</em></footer>
+      <footer class="footer">
+        <a
+          href="https://github.com/MDias04/another-weather-app"
+          target="
+        _blank"
+        >
+          Another Weather App</a
+        >
+        by <em>Marta Dias</em>
+      </footer>
     </main>
     <script src="src/index.js"></script>
   </body>

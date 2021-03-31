@@ -131,24 +131,13 @@
   text-transform: capitalize;
 }
 
-#celcius,
-#fahrenheit {
+.metrics {
   line-height: 1px;
   font-size: 2rem;
   position: relative;
-  left: 43%;
-  padding: 10px;
+  left: 45%;
   text-decoration: none;
   color: black;
-}
-#fahrenheit:visited {
-  text-decoration: underline;
-  color: blue;
-}
-
-#celcius:visited {
-  text-decoration: underline;
-  color: blue;
 }
 
 #celcius:hover {
