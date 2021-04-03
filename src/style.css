@@ -35,20 +35,22 @@
 
 /* DATE / LOCATION / SEARCH BAR DASHBOARD */
 
-.dashboard {
+/* .dashboard {
   margin: 0 auto;
   text-align: center;
   padding-top: 50px;
-}
+} */
 
 .date {
   font-size: 4rem;
   font-weight: 100;
+  margin: 20px;
 }
 
 .time {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 100;
+  margin: 0 0 0 20px;
 }
 
 .location {
@@ -57,9 +59,13 @@
   font-weight: lighter;
 }
 
+#search-location {
+  margin: 0 10px;
+}
+
 .searchbar {
-  min-width: 45%;
-  min-height: 35px;
+  min-width: 100%;
+  /*min-height: 35px; */
   border-radius: 2rem;
   border: none;
   padding: 0.5rem;
@@ -69,19 +75,11 @@
     rgba(255, 255, 255, 0.6),
     rgba(255, 255, 255, 0.2)
   );
-
-  transition: all 0.3s ease 0s;
   cursor: pointer;
 }
 
-.searchbar:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 15px rgba(31, 31, 31, 0.1);
-}
-
 .search-btn,
-.currentBtn {
-  margin-left: 20px;
+.current-btn {
   width: 80px;
   min-height: 35px;
   font-size: 1rem;
@@ -101,15 +99,15 @@
   cursor: pointer;
 }
 
-.search-btn:hover,
-.currentBtn:hover {
-  box-shadow: 0 8px 15px rgba(31, 31, 31, 0.1);
-  transform: translateY(-4px);
+.search-btn:active,
+.current-btn:active {
+  color: #f5f7fa;
 }
 
-.currentBtn {
-  width: 150px;
-  font-size: 14px;
+.search-btn:hover,
+.current-btn:hover {
+  box-shadow: 0 8px 15px rgba(31, 31, 31, 0.1);
+  transform: translateY(-4px);
 }
 
 #time {
