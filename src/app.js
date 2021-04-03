@@ -38,6 +38,8 @@ let weekDays = [
 
 let current = new Date();
 
+let celsiusTemperature = null;
+
 // UPDATES TO THE CURRENT Date //
 let currentDay = weekDays[current.getDay()];
 let currentMonth = months[current.getMonth()];
@@ -50,39 +52,10 @@ dateFormat.innerHTML = `${currentDay} ${currentDate} ${currentMonth}`;
 let time = document.querySelector("#current-time");
 time.innerHTML = formatTime(current);
 
-// UPDATE METRIC TEMPERATURE //
-
-//CONVERT CELCIUS//
-function convertCelcius(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#current-temperature");
-
-  let celciusTemp = ((currentTemp.innerHTML - 32) * 5) / 9;
-  celciusTemp = Math.round(celciusTemp);
-  currentTemp.innerHTML = `${celciusTemp}`;
-}
-
-let celcius = document.querySelector("#celcius");
-celcius.addEventListener("click", convertCelcius);
-
-//CONVERT FAHRENHEIT//
-function convertFahrenheit(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#current-temperature");
-  let fahrenheitTemp = (currentTemp.innerHTML * 9) / 5 + 32;
-  fahrenheitTemp = Math.round(fahrenheitTemp);
-  currentTemp.innerHTML = `${fahrenheitTemp}`;
-}
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", convertFahrenheit);
-
-// CHANGING IMAGES ACCORDING TO WEATHER TEMPERATURE //
-
 // UPDATE LOCATION from the search bar > user input //
 function changeCity(event) {
   event.preventDefault();
-  let inputCity = document.querySelector("#search-city"); //TODO: reset text field when user presses submit
+  let inputCity = document.querySelector("#search-city");
   let cityValue = `${inputCity.value}`;
 
   let apiKey = "99418b33eeeda47ea16a3e1653492f12";
@@ -96,7 +69,9 @@ newCity.addEventListener("submit", changeCity);
 
 // UPDATE TEMPERATURE //
 function getWeather(response) {
-  let currentTemp = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  let temperatureElement = Math.round(celsiusTemperature);
   let conditions = response.data.weather[0].description;
 
   let wind = Math.round(response.data.wind.speed);
@@ -107,16 +82,10 @@ function getWeather(response) {
   let currentCity = document.querySelector("#current-city");
   let tempElement = document.querySelector("#current-temperature");
   currentCity.innerHTML = `${response.data.name}`;
-  tempElement.innerHTML = `${currentTemp}`;
+  tempElement.innerHTML = `${temperatureElement}`;
 
   let description = document.querySelector("#conditions");
   description.innerHTML = `${conditions}`;
-
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
 
   let winds = document.querySelector("#wind");
   winds.innerHTML = `Wind: ${wind}`;
@@ -129,6 +98,12 @@ function getWeather(response) {
 
   let lowTemp = document.querySelector("#low");
   lowTemp.innerHTML = `Low: ${low}˚`;
+
+  // let iconElement = document.querySelector("#icon");
+  // iconElement.setAttribute(
+  //   "src",
+  //   `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  // );
 }
 
 //get coords of current location
@@ -150,3 +125,33 @@ function updateLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getCurrentLocation);
 }
+
+//CONVERT CELCIUS//
+function convertCelcius(event) {
+  event.preventDefault();
+
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+
+  let currentTemp = document.querySelector("#current-temperature");
+  currentTemp.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celciusLink = document.querySelector("#celcius");
+celciusLink.addEventListener("click", convertCelcius);
+
+//CONVERT FAHRENHEIT//
+function convertFahrenheit(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#current-temperature");
+
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  fahrenheitTemp = Math.round(fahrenheitTemp);
+  currentTemp.innerHTML = `${fahrenheitTemp}`;
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", convertFahrenheit);

@@ -2,12 +2,17 @@
   margin: 0;
   padding: 0;
   font-size: 100%;
+  color: #2d2d2d;
+}
+
+span {
+  margin: 0;
+  padding: 0;
 }
 
 /* MAIN BACKGROUND */
 .background {
   min-height: 100vh;
-  background-image: linear-gradient(to top right, #f5f7fa 0%, #c3cfe2 100%);
   background-image: url(https://images.unsplash.com/photo-1515428895957-2d42d4d88303?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,7 +26,7 @@
 
 /* CARD */
 #glass-card {
-  min-height: 80vh;
+  min-height: 60vh;
   width: 50%;
   background: linear-gradient(
     to left bottom,
@@ -35,57 +40,58 @@
 
 /* DATE / LOCATION / SEARCH BAR DASHBOARD */
 
-/* .dashboard {
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 50px;
-} */
-
 .date {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 100;
-  margin: 20px;
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
 .time {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 100;
-  margin: 0 0 0 20px;
+  margin-left: 30px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .location {
-  font-size: 2.5rem;
-  line-height: 2;
+  font-size: 2rem;
   font-weight: lighter;
+  margin-top: 10px;
+  margin-left: 30px;
 }
 
-#search-location {
-  margin: 0 10px;
+#current-city {
+  font-weight: bold;
 }
 
 .searchbar {
-  min-width: 100%;
-  /*min-height: 35px; */
+  min-width: 50%;
+  min-height: 35px;
   border-radius: 2rem;
   border: none;
   padding: 0.5rem;
+  margin-left: 30px;
+  margin-top: 10px;
 
   background: linear-gradient(
     to left bottom,
     rgba(255, 255, 255, 0.6),
     rgba(255, 255, 255, 0.2)
   );
+
   cursor: pointer;
 }
 
 .search-btn,
-.current-btn {
+.currentBtn {
+  margin-left: 20px;
   width: 80px;
   min-height: 35px;
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 1.2px;
-  color: black;
   background: linear-gradient(
     to left bottom,
     rgba(255, 255, 255, 0.6),
@@ -99,21 +105,15 @@
   cursor: pointer;
 }
 
-.search-btn:active,
-.current-btn:active {
-  color: #f5f7fa;
+.currentBtn {
+  width: 150px;
+  font-size: 14px;
 }
 
 .search-btn:hover,
-.current-btn:hover {
+.currentBtn:hover {
   box-shadow: 0 8px 15px rgba(31, 31, 31, 0.1);
   transform: translateY(-4px);
-}
-
-#time {
-  font-size: 3rem;
-  font-weight: 100;
-  letter-spacing: 1px;
 }
 
 /* TEMPERATURE CONTAINER */
@@ -123,31 +123,43 @@
   text-align: center;
 }
 
+.degrees .metrics {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.celcius-unit,
+.fahrenheit-unit {
+  font-size: 2.5rem;
+  color: #717171;
+  text-decoration: none;
+}
+
+.celcius-unit:hover,
+.fahrenheit-unit:hover {
+  color: #a2a2a2;
+}
+
+.degrees .active {
+  color: #2d2d2d;
+  cursor: default;
+  font-size: 5rem;
+  text-decoration: none;
+}
+.degrees .active:hover {
+  text-decoration: none;
+}
+
 .conditions {
+  margin-top: 0;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-transform: capitalize;
 }
-
-.metrics {
-  line-height: 1px;
+.icon {
   font-size: 2rem;
-  position: relative;
-  left: 45%;
-  text-decoration: none;
-  color: black;
 }
-
-#celcius:hover {
-  cursor: pointer;
-  color: #525252;
-}
-
-#fahrenheit:hover {
-  cursor: pointer;
-  color: #525252;
-}
-
 /* WEATHER DETAILS */
 .weather-details {
   font-size: 1.2rem;
@@ -187,7 +199,7 @@
   line-height: 2;
 }
 
-span {
+.weekdays-temp {
   font-size: 2rem;
   line-height: 2;
   padding-left: 20px;
@@ -197,8 +209,12 @@ span {
   position: absolute;
   display: block;
   bottom: 2%;
-  left: 25%;
+  left: 2%;
   color: white;
 }
 
-/* MEDIA */
+.github-link,
+.my-card {
+  text-decoration: none;
+  color: aliceblue;
+}
