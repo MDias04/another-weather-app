@@ -79,25 +79,24 @@ function getWeather(response) {
   let low = Math.round(response.data.main.temp_min);
   let currentCity = document.querySelector("#current-city");
   let tempElement = document.querySelector("#current-temperature");
-  let description = document.querySelector("#conditions");
   let winds = document.querySelector("#wind");
   let humidityTemp = document.querySelector("#humidity");
   let highTemp = document.querySelector("#high");
   let lowTemp = document.querySelector("#low");
+  let iconElement = document.querySelector("#weather-icon");
 
   currentCity.innerHTML = `${response.data.name}`;
   tempElement.innerHTML = `${temperatureElement}`;
-  description.innerHTML = `${conditions}`;
   winds.innerHTML = `Wind: ${wind}`;
   humidityTemp.innerHTML = `Humidity: ${humidity}%`;
   highTemp.innerHTML = `High: ${high}˚`;
   lowTemp.innerHTML = `Low: ${low}˚`;
 
-  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 //get coords of current location
