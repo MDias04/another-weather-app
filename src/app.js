@@ -1,9 +1,9 @@
-function formatTime(time) {
-  let hours = time.getHours();
+function formatTime(timestamp) {
+  let hours = timestamp.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = time.getMinutes();
+  let minutes = timestamp.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -73,37 +73,31 @@ function getWeather(response) {
 
   let temperatureElement = Math.round(celsiusTemperature);
   let conditions = response.data.weather[0].description;
-
   let wind = Math.round(response.data.wind.speed);
   let humidity = response.data.main.humidity;
-  let high = response.data.main.temp_max;
-  let low = response.data.main.temp_min;
-
+  let high = Math.round(response.data.main.temp_max);
+  let low = Math.round(response.data.main.temp_min);
   let currentCity = document.querySelector("#current-city");
   let tempElement = document.querySelector("#current-temperature");
+  let description = document.querySelector("#conditions");
+  let winds = document.querySelector("#wind");
+  let humidityTemp = document.querySelector("#humidity");
+  let highTemp = document.querySelector("#high");
+  let lowTemp = document.querySelector("#low");
+
   currentCity.innerHTML = `${response.data.name}`;
   tempElement.innerHTML = `${temperatureElement}`;
-
-  let description = document.querySelector("#conditions");
   description.innerHTML = `${conditions}`;
-
-  let winds = document.querySelector("#wind");
   winds.innerHTML = `Wind: ${wind}`;
-
-  let humidityTemp = document.querySelector("#humidity");
   humidityTemp.innerHTML = `Humidity: ${humidity}%`;
-
-  let highTemp = document.querySelector("#high");
   highTemp.innerHTML = `High: ${high}˚`;
-
-  let lowTemp = document.querySelector("#low");
   lowTemp.innerHTML = `Low: ${low}˚`;
 
-  // let iconElement = document.querySelector("#icon");
-  // iconElement.setAttribute(
-  //   "src",
-  //   `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  // );
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 //get coords of current location
