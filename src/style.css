@@ -216,5 +216,14 @@ span {
 .github-link,
 .my-card {
   text-decoration: none;
-  color: aliceblue;
+  color: #9c6e6c;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.github-link:hover,
+.my-card:hover {
+  text-decoration: underline;
+  color: ghostwhite;
+  cursor: pointer;
 }
