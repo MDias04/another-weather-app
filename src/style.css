@@ -119,8 +119,9 @@ span {
 /* TEMPERATURE CONTAINER */
 
 .temperature {
-  font-size: 8rem;
+  font-size: 6rem;
   text-align: center;
+  margin-right: 20%;
 }
 
 .degrees .metrics {
@@ -153,13 +154,12 @@ span {
 
 .conditions {
   margin-top: 0;
-  text-align: center;
+  padding: 0;
   font-size: 2rem;
   text-transform: capitalize;
+  text-align: center;
 }
-.icon {
-  font-size: 2rem;
-}
+
 /* WEATHER DETAILS */
 .weather-details {
   font-size: 1.2rem;

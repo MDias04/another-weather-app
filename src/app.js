@@ -71,26 +71,22 @@ newCity.addEventListener("submit", changeCity);
 function getWeather(response) {
   celsiusTemperature = response.data.main.temp;
 
-  let temperatureElement = Math.round(celsiusTemperature);
-  let conditions = response.data.weather[0].description;
-  let wind = Math.round(response.data.wind.speed);
-  let humidity = response.data.main.humidity;
-  let high = Math.round(response.data.main.temp_max);
-  let low = Math.round(response.data.main.temp_min);
   let currentCity = document.querySelector("#current-city");
-  let tempElement = document.querySelector("#current-temperature");
-  let humidityTemp = document.querySelector("#humidity");
-  let winds = document.querySelector("#wind");
-  let highTemp = document.querySelector("#high");
-  let lowTemp = document.querySelector("#low");
+  let temperatureElement = document.querySelector("#current-temperature");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let highTemperature = document.querySelector("#high");
+  let lowTemperature = document.querySelector("#low");
+  let weatherDescription = document.querySelector("#weather-description");
   let iconElement = document.querySelector("#weather-icon");
 
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   currentCity.innerHTML = `${response.data.name}`;
-  tempElement.innerHTML = `${temperatureElement}`;
-  humidityTemp.innerHTML = `Humidity: ${humidity}%`;
-  winds.innerHTML = `Wind: ${wind}`;
-  highTemp.innerHTML = `High: ${high}˚`;
-  lowTemp.innerHTML = `Low: ${low}˚`;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  highTemperature.innerHTML = Math.round(response.data.main.temp_max);
+  lowTemperature.innerHTML = Math.round(response.data.main.temp_min);
+  weatherDescription.innerHTML = response.data.weather[0].description;
 
   iconElement.setAttribute(
     "src",

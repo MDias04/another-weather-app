@@ -80,32 +80,33 @@
 
         <div class="degrees">
           <h1 class="temperature">
+            <img
+              src="https://openweathermap.org/img/wn/02d@2x.png"
+              alt=""
+              id="weather-icon"
+            />
             <span id="current-temperature">11</span>˚
             <span class="metrics">
               <a href="#" id="celcius" class="celcius-unit active">C</a>
               <a href="#" id="fahrenheit" class="fahrenheit-unit">F</a>
             </span>
           </h1>
-          <h3 class="conditions" id="conditions">
-            Sunny
-            <img src="" alt="" class="icon" id="weather-icon" />
-          </h3>
         </div>
-
+        <div class="conditions" id="weather-description">Few Clouds</div>
         <div class="container">
           <div class="row weather-details">
             <div class="col">
-              <p class="items" id="humidity">Humidity: 68%</p>
+              <p>Humidity: <span id="humidity">10</span>%</p>
             </div>
             <div class="col">
-              <p class="items" id="wind">Wind: 7</p>
+              <p>Wind: <span id="wind">5</span> m/h</p>
             </div>
 
             <div class="col">
-              <p class="item high" id="high">High: 11°</p>
+              <p>High: <span id="high">11</span>°</p>
             </div>
             <div class="col">
-              <p class="item low" id="low">Low: 0°</p>
+              <p>Low: <span id="low">5</span>°</p>
             </div>
           </div>
         </div>
