@@ -54,9 +54,7 @@
         <div class="dashboard">
           <h1 class="date" id="current-date"></h1>
           <p class="time">Last Updated: <span id="current-time"></span></p>
-          <h2 class="location">
-            Currently in <span id="current-city">Christchurch</span>
-          </h2>
+          <h2 class="location">Currently in <span id="current-city"></span></h2>
         </div>
 
         <div class="search-form">
@@ -80,70 +78,36 @@
 
         <div class="degrees">
           <h1 class="temperature">
-            <img
-              src="https://openweathermap.org/img/wn/02d@2x.png"
-              alt=""
-              id="weather-icon"
-            />
-            <span id="current-temperature">11</span>˚
+            <img src="" alt="" id="weather-icon" />
+            <span id="current-temperature"></span>˚
             <span class="metrics">
               <a href="#" id="celcius" class="celcius-unit active">C</a>
               <a href="#" id="fahrenheit" class="fahrenheit-unit">F</a>
             </span>
           </h1>
         </div>
-        <div class="conditions" id="weather-description">Few Clouds</div>
+        <div class="weather-conditions" id="weather-description"></div>
         <div class="container">
           <div class="row weather-details">
             <div class="col">
-              <p>Humidity: <span id="humidity">10</span>%</p>
+              <p>Humidity: <span id="humidity"></span>%</p>
             </div>
             <div class="col">
-              <p>Wind: <span id="wind">5</span> m/h</p>
+              <p>Wind: <span id="wind"></span> m/h</p>
             </div>
 
             <div class="col">
-              <p>High: <span id="high">11</span>°</p>
+              <p>High: <span id="high"></span>°</p>
             </div>
             <div class="col">
-              <p>Low: <span id="low">5</span>°</p>
+              <p>Low: <span id="low"></span>°</p>
             </div>
           </div>
         </div>
-        <div class="container weekdays">
-          <ul class="row">
-            <li class="col">
-              Tuesday <br />
-              <i class="week-icons fas fa-cloud-sun"></i> <br />
-              <span class="weekdays-temp">12°</span>
-            </li>
-            <li class="col">
-              Wednesday <br />
-              <i class="week-icons fas fa-sun"></i> <br />
-              <span class="weekdays-temp">14°</span>
-            </li>
-            <li class="col">
-              Thursday <br />
-              <i class="week-icons fas fa-sun"></i> <br />
-              <span class="weekdays-temp">13°</span>
-            </li>
-            <li class="col">
-              Friday <br />
-              <i class="week-icons fas fa-cloud-sun"></i> <br />
-              <span class="weekdays-temp">10°</span>
-            </li>
-            <li class="col">
-              Saturday <br />
-              <i class="week-icons fas fa-cloud-sun"></i> <br />
-              <span class="weekdays-temp"> 10° </span>
-            </li>
-            <li class="col">
-              Sunday <br />
-              <i class="week-icons fas fa-cloud-sun"></i> <br />
-              <span class="weekdays-temp">7°</span>
-            </li>
-          </ul>
-        </div>
+
+        <!-- WEATHER WEEKLY FORECAST -->
+
+        <div class="weather-forecast" id="forecast"></div>
       </div>
     </main>
     <footer class="footer">
